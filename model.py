@@ -1,4 +1,3 @@
-
 import torch.nn as nn
 import torch.nn.functional as F
 import timm
@@ -86,3 +85,4 @@ class QRC_UNet(nn.Module):
 
         x = self.final_conv(x)
         return torch.sigmoid(x)
+
