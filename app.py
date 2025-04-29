@@ -9,7 +9,7 @@ from PIL import Image
 import numpy as np
 
 # --- Custom CSS for professional styling ---
-st.set_page_config(page_title="Lung Nodule Segmentation", layout="wide")
+st.set_page_config(page_title="Lung Module Segmentation", layout="wide")
 st.markdown("""
     <style>
         body {
@@ -40,7 +40,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<div class='big-title'>🫁 Lung Nodule Segmentation (QRC-U-Net)</div>", unsafe_allow_html=True)
+st.markdown("<div class='big-title'>🫁 Lung Module Segmentation (QRC-U-Net)</div>", unsafe_allow_html=True)
 
 # --- Model components (QFC, ResCaps, ADSC, QRC_UNet) ---
 class QuantumFourierConv(nn.Module):
@@ -133,7 +133,7 @@ transform = transforms.Compose([
 @st.cache_resource
 def load_model():
     model = QRC_UNet()
-    model.load_state_dict(torch.load("qrc_unet_trained.pth", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("qrc_unet_trained(3).pth", map_location=torch.device('cpu')))
     model.eval()
     return model
 
